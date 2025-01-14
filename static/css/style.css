@@ -1,0 +1,26 @@
+thead.table-dark {
+    background-color: #07a107 !important; /* Verde lima */
+    color: #FFFFFF; /* Branco */
+}
+
+tbody tr:hover {
+    background-color: #07a107; /* Verde lima */
+    color: #FFFFFF !important; /* Branco */
+}
+
+tbody tr:hover td, /* Aplica a cor branca aos textos dentro das células */
+tbody tr:hover th { 
+    color: #FFFFFF !important;
+    background-color: #07a107
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #07a107; 
+    color: #fff;
+}
+
+.imagem-centralizada {
+    text-align: center; /* Centraliza o conteúdo dentro do div */
+}
+ 
+
