@@ -1,0 +1,5 @@
+Flask
+matplotlib
+PyMuPDF
+pdfplumber
+PyPDF2

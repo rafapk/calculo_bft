@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <title>AjudaNutri - percentual de gordura por circuferência</title>
+</head>
+<body>
+    <div class="container mt-5">
+
+        <div class="imagem-centralizada">
+            <figure>
+              <img src="static\ajuda_nutri_logo_ne_remove_bg.png" alt=" Logo ajuda Nutri">
+            </figure>
+          </div>        
+          
+          <h3 class="text-center">Calculadora de Percentual de Gordura Corporal</h3>
+
+        <!-- Accordion -->
+        <div class="accordion" id="bfpAccordion">
+            <!-- Formulário -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingForm">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm" aria-expanded="true" aria-controls="collapseForm">
+                        Dados do paciente 
+                    </button>
+                </h2>
+                <div id="collapseForm" class="accordion-collapse collapse show" aria-labelledby="headingForm" data-bs-parent="#bfpAccordion">
+                    <div class="accordion-body">
+                        <form id="bfpForm">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome do Paciente</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sexo" class="form-label">Sexo</label>
+                                <select class="form-select" id="sexo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="peso" class="form-label">Peso (kg)</label>
+                                <input type="number" step="0.1" class="form-control" id="peso" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="idade" class="form-label">Idade</label>
+                                <input type="number" step="0.1" class="form-control" id="idade" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="altura" class="form-label">Altura (cm)</label>
+                                <input type="number" step="0.1" class="form-control" id="altura" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pescoco" class="form-label">Pescoço (cm)</label>
+                                <input type="number" step="0.1" class="form-control" id="pescoco" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cintura" class="form-label">Cintura (cm)</label>
+                                <input type="number" step="0.1" class="form-control" id="cintura" required>
+                            </div>
+                            <div class="mb-3" id="quadrilGroup" style="display: none;">
+                                <label for="quadril" class="form-label">Quadril (cm)</label>
+                                <input type="number" step="0.1" class="form-control" id="quadril">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </form>
+                        <!-- Botão para Importar Informações -->
+                        <button class="btn btn-secondary mt-3" id="importarPdfBtn">Importar Informações PDF WebDiet</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingGraph">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGraph" aria-expanded="true" aria-controls="collapseGraph">
+                        Gráfico de Gordura corporal
+                    </button>
+                </h2>
+                <div id="collapseGraph" class="accordion-collapse collapse show" aria-labelledby="headingGraph" data-bs-parent="#bfpAccordion">
+                    <div class="accordion-body">
+                        <div id="result" class="mt-4">
+                            <!-- Gráfico será atualizado dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabela -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTable">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTable" aria-expanded="true" aria-controls="collapseTable">
+                        Resultados/Resumo da avaliação
+                    </button>
+                </h2>
+                <div id="collapseTable" class="accordion-collapse collapse show" aria-labelledby="headingTable" data-bs-parent="#bfpAccordion">
+                    <div class="accordion-body">
+                        <table class="table table-striped table-hover table-bordered mt-3 align-middle">
+                            <thead class="table-dark text-center">
+                                <tr>
+                                    <th>Métrica</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-resultados" class="text-center">
+                                <!-- Dados serão inseridos dinamicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/script.js"></script>
+
+</body>
+</html>
